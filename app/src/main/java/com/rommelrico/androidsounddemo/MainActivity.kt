@@ -23,8 +23,11 @@ class MainActivity : AppCompatActivity() {
 
         // Handling the seekbar.
         val volumeControl = findViewById<SeekBar>(R.id.volumeSeekBar)
+        volumeControl.max = maxVolume ?: 0
+
         volumeControl.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
