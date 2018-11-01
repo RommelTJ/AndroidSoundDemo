@@ -17,7 +17,21 @@ class MainActivity : AppCompatActivity() {
 
         // Handling the seekbar.
         val volumeControl = findViewById<SeekBar>(R.id.volumeSeekBar)
-    }
+        volumeControl.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
+
+    } // end onCreate.
 
     fun play(view: View) {
         mediaPlayer?.start()
