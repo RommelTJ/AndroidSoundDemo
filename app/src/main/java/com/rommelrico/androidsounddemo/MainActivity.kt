@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         // Scrub SeekBar Listener.
         scrubSeekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                mediaPlayer?.seekTo(progress)
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
