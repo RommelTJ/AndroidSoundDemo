@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 scrubSeekBar.progress = mediaPlayer?.currentPosition ?: 0
             }
 
-        }, 0, 1000)
+        }, 0, 300)
 
 
     } // end onCreate.
