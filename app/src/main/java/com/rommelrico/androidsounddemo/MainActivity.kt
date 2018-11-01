@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.SeekBar
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +42,30 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
             }
         })
+
+        // Scrub Seek Bar.
+        val scrubSeekBar = findViewById<SeekBar>(R.id.scrubSeekBar)
+
+        // Max value
+        scrubSeekBar.max = mediaPlayer?.duration ?: 0
+
+        // Scrub SeekBar Listener.
+        scrubSeekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
+
+        
+
 
     } // end onCreate.
 
