@@ -52,19 +52,23 @@ class MainActivity : AppCompatActivity() {
         // Scrub SeekBar Listener.
         scrubSeekBar.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         })
 
-        
+        // Timer.
+        Timer().scheduleAtFixedRate(object: TimerTask() {
+
+            override fun run() {
+                scrubSeekBar.progress = mediaPlayer?.currentPosition ?: 0
+            }
+
+        }, 0, 1000)
 
 
     } // end onCreate.
