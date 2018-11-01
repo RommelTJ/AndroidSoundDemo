@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         mediaPlayer = MediaPlayer.create(this, R.raw.marbles)
 
-        // Max Volume
+        // Max and Current Volume
         audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager?
         val maxVolume = audioManager?.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
         var currentVolume = audioManager?.getStreamVolume(AudioManager.STREAM_MUSIC)
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         volumeControl.max = maxVolume ?: 0
         volumeControl.progress = currentVolume ?: 0
 
+        // SeekBar Listener.
         volumeControl.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 audioManager?.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0)
