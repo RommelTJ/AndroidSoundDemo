@@ -18,4 +18,8 @@ class MainActivity : AppCompatActivity() {
     fun play(view: View) {
         mediaPlayer?.start()
     }
+
+    fun pause(view: View) {
+        mediaPlayer?.pause()
+    }
 }
