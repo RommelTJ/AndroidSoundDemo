@@ -1,5 +1,6 @@
 package com.rommelrico.androidsounddemo
 
+import android.content.Context
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer = MediaPlayer.create(this, R.raw.marbles)
 
         // Max Volume
+        audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager?
         val maxVolume = audioManager?.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
 
         // Handling the seekbar.
