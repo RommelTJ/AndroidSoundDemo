@@ -11,5 +11,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val mediaPlayer = MediaPlayer.create(this, R.raw.marbles)
+        mediaPlayer.start()
     }
 }
