@@ -22,10 +22,12 @@ class MainActivity : AppCompatActivity() {
         // Max Volume
         audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager?
         val maxVolume = audioManager?.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
+        var currentVolume = audioManager?.getStreamVolume(AudioManager.STREAM_MUSIC)
 
         // Handling the seekbar.
         val volumeControl = findViewById<SeekBar>(R.id.volumeSeekBar)
         volumeControl.max = maxVolume ?: 0
+        volumeControl.progress = currentVolume ?: 0
 
         volumeControl.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
